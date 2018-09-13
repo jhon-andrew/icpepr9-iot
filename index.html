@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Firebase IoT Demo</title>
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAE6PAGZckjjlpg1DzfdRqQ8UF7GOMx89w",
+      authDomain: "icpepr9-iot.firebaseapp.com",
+      databaseURL: "https://icpepr9-iot.firebaseio.com",
+      projectId: "icpepr9-iot",
+      storageBucket: "icpepr9-iot.appspot.com",
+      messagingSenderId: "241420083899"
+    };
+    firebase.initializeApp(config);
+
+    firebase.database().ref('iot-logs').on('child_added', rawData => {
+      let data = rawData.val()
+
+      document.body.innerHTML += `<pre>${data.message}</pre><br />`
+    })
+  </script>
+</body>
+</html>

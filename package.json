@@ -1,0 +1,12 @@
+{
+  "name": "iot-practice",
+  "version": "0.1.0",
+  "description": "A simple iot project.",
+  "scripts": {},
+  "author": "Jhon Andrew Baes",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^5.4.2",
+    "johnny-five": "^1.0.0"
+  }
+}
